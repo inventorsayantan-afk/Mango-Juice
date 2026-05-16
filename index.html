@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mango Drink - Scrollytelling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "mango": "#F8A408",
+                        "mango-dark": "#D97706",
+                        "mango-light": "#FCD34D",
+                        "cream": "#FDF8F1",
+                        "ink": "#1A1A1A",
+
+                        "primary": "#311900",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#fff0d4",
+                        "on-primary-container": "#311900",
+                        "secondary": "#5e3200",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#ffdbb0",
+                        "on-secondary-container": "#311900",
+                        "tertiary": "#8a4b00",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#ffc285",
+                        "on-tertiary-container": "#311900",
+                        "background": "#f59f00",
+                        "on-background": "#311900",
+                        "surface": "#ffffff",
+                        "on-surface": "#311900",
+                        "surface-variant": "#ffebb8",
+                        "on-surface-variant": "#5e3200",
+                        "outline": "#b36b00",
+                        "outline-variant": "#cc7a00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#e68a00",
+                        "surface-container": "#f59f00",
+                        "surface-container-high": "#e68a00",
+                        "surface-container-highest": "#d97706",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "sans": ['Open Sans', "ui-sans-serif", "system-ui"],
+                        "display": ['Montserrat', "sans-serif"],
+
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "display-lg": ["Bodoni Moda"],
+                        "headline-md": ["Bodoni Moda"],
+                        "body-lg": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "label-caps": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 300,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle Gold Texture Overlay */
+        .gold-texture {
+            position: relative;
+        }
+        .gold-texture::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMGgxdjFIMHoiIGZpbGw9IiNDNUEwNTkiIGZpbGwtb3BhY2l0eT0iMC4xIi8+Cjwvc3ZnPg==');
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* Arch Shape */
+        .shape-arch {
+            border-top-left-radius: 9999px;
+            border-top-right-radius: 9999px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span class="maharaja">MAHARAJA'S</span>
+            <span class="reserve">RESERVE</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#purity">Purity</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="scroll-container">
+        <div class="canvas-container">
+            <canvas id="animation-canvas"></canvas>
+            <div class="overlay-gradient"></div>
+        </div>
+        
+        <div class="content-section align-left" id="home">
+            <div class="glass-card">
+                <h1>Pure Mango Bliss</h1>
+                <p>Experience the ultimate refreshment, crafted from the finest handpicked mangoes. Scroll to uncover the journey.</p>
+                <div class="scroll-indicator">
+                    <span>Scroll Down</span>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section align-right" id="about">
+            <div class="glass-card">
+                <h2>100% Natural Ingredients</h2>
+                <p>No artificial flavors. No preservatives. Just the pure, unadulterated taste of sun-ripened mangoes in every sip.</p>
+            </div>
+        </div>
+
+        <div class="content-section align-left" id="purity">
+            <div class="glass-card">
+                <h2>Sourced with Care</h2>
+                <p>We work directly with local farmers to ensure only the highest quality fruits make it into our signature mango drink.</p>
+            </div>
+        </div>
+
+        <div class="content-section align-right" id="contact">
+            <div class="glass-card end-card">
+                <h2>Taste the Tropics</h2>
+                <p>A burst of sunshine awaits. Are you ready to dive in?</p>
+                <button class="cta-button">Order Now</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+<!-- Injected Content from maharaja's-reserve -->
+<div class="bg-mango text-ink font-sans relative z-10">
+  
+  <!-- Certifications Section -->
+  <section class="py-16 bg-cream border-y border-ink/5 min-h-screen flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-center text-xs font-bold uppercase tracking-[0.3em] text-ink/40 mb-12 font-display">Our Quality Benchmarks</p>
+      <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+        <div class="flex items-center gap-3 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
+          <span class="material-symbols-outlined text-[20px] text-mango-dark">check_circle</span>
+          <span class="font-display font-bold text-sm tracking-tighter">Organic Certified</span>
+        </div>
+        <div class="flex items-center gap-3 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
+          <span class="material-symbols-outlined text-[20px] text-mango-dark">check_circle</span>
+          <span class="font-display font-bold text-sm tracking-tighter">Global GAP</span>
+        </div>
+        <div class="flex items-center gap-3 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
+          <span class="material-symbols-outlined text-[20px] text-mango-dark">check_circle</span>
+          <span class="font-display font-bold text-sm tracking-tighter">ISO 22000</span>
+        </div>
+        <div class="flex items-center gap-3 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
+          <span class="material-symbols-outlined text-[20px] text-mango-dark">check_circle</span>
+          <span class="font-display font-bold text-sm tracking-tighter">Fair Trade</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Details -->
+  <section id="details" class="py-24 bg-cream min-h-screen flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-5xl font-black text-ink mb-4 uppercase font-display">Naturally Refined</h2>
+        <div class="w-24 h-1.5 bg-mango mx-auto rounded-full"></div>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="order-2 lg:order-1">
+           <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=1000&auto=format&fit=crop" alt="Premium Alphonso Mango Nectar" class="w-full max-w-md mx-auto rounded-3xl shadow-2xl" />
+        </div>
+        <div class="order-1 lg:order-2 space-y-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 font-display">
+              <span class="w-8 h-8 rounded-lg bg-mango flex items-center justify-center text-xs text-white">01</span>
+              Single-Origin Alphonso
+            </h3>
+            <p class="text-ink/70 leading-relaxed pl-10 font-sans">
+              Grown in the distinct soil of Ratnagiri, our mangoes benefit from the salt-tinged sea breeze, resulting in a flavor profile that is creamy, intense, and naturally sweet.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 font-display">
+              <span class="w-8 h-8 rounded-lg bg-mango flex items-center justify-center text-xs text-white">02</span>
+              No Added Preservatives
+            </h3>
+            <p class="text-ink/70 leading-relaxed pl-10 font-sans">
+              Honesty in every bottle. We don't add colors, artificial aromas, or chemical stabilizers. What you taste is the pure essence of the fruit.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 font-display">
+              <span class="w-8 h-8 rounded-lg bg-mango flex items-center justify-center text-xs text-white">03</span>
+              Small Batch Perfection
+            </h3>
+            <p class="text-ink/70 leading-relaxed pl-10 font-sans">
+              Produced in limited quantities during the peak season to ensure that every bottle meets our stringent standards for viscosity and Brix levels.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Its Made -->
+  <section class="py-24 bg-mango relative min-h-screen flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white/10 backdrop-blur-md p-10 rounded-[40px] border border-white/20 text-center hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-mango mx-auto mb-6 shadow-xl">
+            <span class="material-symbols-outlined text-[24px]">eco</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-ink uppercase tracking-tight font-display">Orchard Selection</h3>
+          <p class="text-ink/70 leading-relaxed font-sans">We source only from century-old orchards in the heart of Devgad and Ratnagiri.</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md p-10 rounded-[40px] border border-white/20 text-center hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-mango mx-auto mb-6 shadow-xl">
+            <span class="material-symbols-outlined text-[24px]">star</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-ink uppercase tracking-tight font-display">Peak Harvest</h3>
+          <p class="text-ink/70 leading-relaxed font-sans">Mangoes are hand-picked at the precise moment of sun-ripened perfection.</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md p-10 rounded-[40px] border border-white/20 text-center hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-mango mx-auto mb-6 shadow-xl">
+            <span class="material-symbols-outlined text-[24px]">water_drop</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-ink uppercase tracking-tight font-display">Cold-Pressed Purity</h3>
+          <p class="text-ink/70 leading-relaxed font-sans">Extracted using traditional methods that preserve the delicate fiber and essential oils.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Wall -->
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+    .animate-marquee-slow {
+      display: flex;
+      width: max-content;
+      animation: marquee 40s linear infinite;
+    }
+    .pause-on-hover:hover .animate-marquee,
+    .pause-on-hover:hover .animate-marquee-slow {
+      animation-play-state: paused;
+    }
+  </style>
+  <section id="reviews" class="py-24 bg-ink overflow-hidden border-y border-white/5 pause-on-hover min-h-screen flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+      <span class="text-mango font-bold uppercase tracking-[0.4em] text-xs mb-4 block font-display">The Wall of Praise</span>
+      <h2 class="text-4xl md:text-5xl font-black text-cream uppercase tracking-tight font-display">Voices of the Reserve</h2>
+    </div>
+    
+    <div class="flex flex-col gap-8 relative">
+      <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-ink to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-ink to-transparent z-10 pointer-events-none"></div>
+
+      <!-- Marquee Row 1 -->
+      <div class="animate-marquee gap-8 px-4">
+        
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"The richness of the Alphonso mango is captured perfectly. It's like eating a fresh mango from Ratnagiri."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      V
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Vikram Mehta</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Connoisseur</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"Unequivocally the best mango nectar I've ever tasted. The texture is velvety and divine."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      S
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Sarah Jenkins</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Food Critic</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"Maharaja's Reserve isn't just a drink; it's an experience. The packaging is as elegant as the flavor."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      A
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Anita Rao</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Lifestyle Blogger</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"A surprising complexity for a fruit nectar. The balance of acidity and sweetness is masterfully handled."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      D
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">David Chen</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Sommelier</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"We use this in our signature desserts. The consistency is unmatched by any other nectar on the market."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      E
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Elena Rodriguez</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Chef de Cuisine</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"The purity is what stands out. You can tell there's no artificial interference. Pure golden sunshine."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      M
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Michael Smith</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Wellness Coach</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"The richness of the Alphonso mango is captured perfectly. It's like eating a fresh mango from Ratnagiri."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      V
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Vikram Mehta</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Connoisseur</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"Unequivocally the best mango nectar I've ever tasted. The texture is velvety and divine."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      S
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Sarah Jenkins</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Food Critic</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"Maharaja's Reserve isn't just a drink; it's an experience. The packaging is as elegant as the flavor."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      A
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Anita Rao</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Lifestyle Blogger</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"A surprising complexity for a fruit nectar. The balance of acidity and sweetness is masterfully handled."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      D
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">David Chen</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Sommelier</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"We use this in our signature desserts. The consistency is unmatched by any other nectar on the market."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      E
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Elena Rodriguez</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Chef de Cuisine</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"The purity is what stands out. You can tell there's no artificial interference. Pure golden sunshine."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      M
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Michael Smith</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Wellness Coach</p>
+    </div>
+  </div>
+</div>
+      </div>
+      
+      <!-- Marquee Row 2 -->
+      <div class="animate-marquee-slow gap-8 px-4" style="animation-direction: reverse;">
+        
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"Our VVIP guests specifically request Maharaja's Reserve. It's the gold standard of luxury beverages."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      P
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Priya Sharma</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Hospitality Directer</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"The standard of single-origin harvesting here is world-class. A true boutique product from India."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      H
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Hiroshi Tanaka</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Import Specialist</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"Every sip takes me back to the coast of Maharashtra. An authentic, heritage-rich flavor profile."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      I
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Isabella Conti</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Travel Writer</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"Finally, a luxury product that respects the fruit as much as the consumer. Simply spectacular."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      L
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Lucas Wright</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Organic Enthusiast</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"The pulpy texture is incredible. It feels substantial and premium, unlike filtered commercial juices."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      S
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Sophia Müller</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Gourmet Scout</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"A regular feature at our family gatherings. It pairs beautifully with both spicy and savory cuisines."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      A
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Ahmed Al-Fayed</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Private Collector</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"Our VVIP guests specifically request Maharaja's Reserve. It's the gold standard of luxury beverages."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      P
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Priya Sharma</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Hospitality Directer</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"The standard of single-origin harvesting here is world-class. A true boutique product from India."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      H
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Hiroshi Tanaka</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Import Specialist</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"Every sip takes me back to the coast of Maharashtra. An authentic, heritage-rich flavor profile."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      I
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Isabella Conti</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Travel Writer</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"Finally, a luxury product that respects the fruit as much as the consumer. Simply spectacular."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      L
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Lucas Wright</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Organic Enthusiast</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"The pulpy texture is incredible. It feels substantial and premium, unlike filtered commercial juices."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      S
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Sophia Müller</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Gourmet Scout</p>
+    </div>
+  </div>
+</div>
+<div class="w-[350px] flex-shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-colors group">
+  <div class="flex gap-1 mb-4">
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+    <span class="material-symbols-outlined text-[16px] text-mango fill">star</span>
+  </div>
+  <p class="text-cream/80 text-lg leading-relaxed mb-6 italic font-sans">"A regular feature at our family gatherings. It pairs beautifully with both spicy and savory cuisines."</p>
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 rounded-full bg-mango/20 flex items-center justify-center text-mango font-bold text-xs border border-mango/30 font-display">
+      A
+    </div>
+    <div>
+      <h4 class="font-bold text-cream uppercase tracking-widest text-xs font-display">Ahmed Al-Fayed</h4>
+      <p class="text-cream/40 text-[10px] uppercase font-bold tracking-tighter font-sans">Private Collector</p>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    <div class="mt-16 text-center">
+      <p class="text-cream/30 text-sm font-medium font-sans">Hover to witness the heritage in motion</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-[#f59f00] font-sans min-h-screen flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto px-6 pt-20 pb-12">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
+        <div class="md:col-span-2 flex flex-col justify-between items-start">
+          <div class="logo" style="align-items: flex-start;">
+              <span class="maharaja" style="font-size: 36px; line-height: 1.1; background: none; color: #311900; -webkit-text-fill-color: #311900;">MAHARAJA'S</span>
+              <span class="reserve" style="font-size: 48px; line-height: 1; background: none; color: #311900; -webkit-text-fill-color: #311900;">RESERVE</span>
+          </div>
+          <p class="text-[#311900]/80 text-[15px] mt-12">
+            © 2024 Maharaja's Reserve. All rights reserved.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-bold text-[#311900] mb-6">Explore</h4>
+          <ul class="space-y-4 text-[#311900]/80 text-[15px]">
+            <li><a href="#" class="hover:text-[#311900] transition-colors">Our Story</a></li>
+            <li><a href="#" class="hover:text-[#311900] transition-colors">Quality Standards</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-[#311900] mb-6">Support</h4>
+          <ul class="space-y-4 text-[#311900]/80 text-[15px]">
+            <li><a href="#" class="hover:text-[#311900] transition-colors">Contact Us</a></li>
+            <li><a href="#" class="hover:text-[#311900] transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-[#311900] mb-6">Connect</h4>
+          <ul class="space-y-4 text-[#311900]/80 text-[15px]">
+            <li><a href="#" class="hover:text-[#311900] transition-colors">Instagram</a></li>
+            <li><a href="#" class="hover:text-[#311900] transition-colors">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="border-t border-[#311900]/20" />
+
+    <div class="max-w-7xl mx-auto px-6 py-12 text-center">
+      <p class="text-[#311900]/80 text-[15px] italic mb-6">
+        Disclaimer: This website is not for marketing purposes. It is purely a conceptual project for demo, quality, and training purposes.
+      </p>
+      <p class="text-[#311900] text-[15px] mb-8">
+        Designed and developed by <strong class="font-bold">Sayantan Deb</strong>
+      </p>
+      <a href="#" class="inline-flex items-center gap-2 bg-[#311900] hover:bg-[#1a0d00] text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors mb-12 shadow-lg border border-[#311900]/10">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.245 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.888-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Hire me to build your website (WhatsApp)
+      </a>
+      
+      <div class="flex justify-center mt-2">
+        <div class="inline-flex items-center gap-6 bg-[#f59f00] border border-[#311900]/10 px-8 py-5 rounded-2xl shadow-xl hover:bg-[#e68a00] transition-colors cursor-pointer" style="background-color: rgba(245,159,0,0.5);">
+          <div class="w-14 h-14 bg-[#311900] rounded-xl flex items-center justify-center border border-[#311900]/5 shadow-inner overflow-hidden">
+             <img src="resilient-phoenix-logo.jpeg" alt="Resilient Phoenix Logo" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-[#311900] font-bold tracking-[0.1em] uppercase text-[16px] font-display" style="font-family: 'Bodoni Moda', serif;">Resilient Phoenix Digital Solutions</h3>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Floating Social Media Bar -->
+<div class="fixed right-4 sm:right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50" style="z-index: 9999;">
+    <a href="#" class="w-12 h-12 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:scale-110 transition-transform duration-300 group relative">
+        <span class="absolute right-14 bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">WhatsApp</span>
+        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a href="#" class="w-12 h-12 bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] text-white rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:scale-110 transition-transform duration-300 group relative">
+        <span class="absolute right-14 bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Instagram</span>
+        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+    </a>
+    <a href="#" class="w-12 h-12 bg-[#1877F2] text-white rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:scale-110 transition-transform duration-300 group relative">
+        <span class="absolute right-14 bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Facebook</span>
+        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a href="#" class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:scale-110 transition-transform duration-300 border border-white/20 group relative">
+        <span class="absolute right-14 bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Threads</span>
+        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M12.04 0C5.558 0 0 5.567 0 12.052S5.558 24.1 12.04 24.1c6.48 0 12.036-5.563 12.036-12.048S18.522 0 12.04 0Zm5.44 14.86c-1.458 1.464-3.568 2.056-5.485 1.954-2.88-.152-4.928-1.554-5.918-4.048-.485-1.222-.55-2.61-.173-3.868.514-1.71 1.776-3.08 3.435-3.714 2.21-.845 4.79-.384 6.48 1.156.402.366.746.804 1.01 1.29.136.25.045.568-.2.712l-.956.592c-.244.152-.562.08-.725-.16a4.42 4.42 0 0 0-3.046-1.986c-2.316-.36-4.57 1.016-5.185 3.16-.32 1.106-.176 2.302.408 3.284.81 1.357 2.372 2.1 4.024 1.906 1.472-.172 2.698-.946 3.43-2.188.168-.284.444-.45.76-.432l1.108.06c.328.016.58.29.566.62-.036.782-.36 1.506-.974 2.072ZM11.968 14.16c-1.63-.122-2.73-1.474-2.684-3.155.046-1.69 1.15-3.036 2.766-3.09 1.516-.052 2.72.99 3.03 2.456l.044.208-4.323 1.054c.24.81 1.026 1.4 1.892 1.41.674.006 1.272-.344 1.636-.932.146-.236.438-.344.7-.246l1.018.374c.266.1.37.382.25.642-.486 1.042-1.602 1.76-2.88 1.76l-.01.002c-.482-.008-.962-.17-1.44-.484Zm1.162-4.596c-.636-.08-1.28.274-1.54 1.03l2.846-.693c-.156-.472-.734-.84-1.306-.337Z"/></svg>
+    </a>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
