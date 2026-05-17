@@ -21,7 +21,7 @@
                         "mango": "#F8A408",
                         "mango-dark": "#D97706",
                         "mango-light": "#FCD34D",
-                        "cream": "#FDF8F1",
+                        "cream": "#FBCFE8",
                         "ink": "#1A1A1A",
 
                         "primary": "#311900",
@@ -128,7 +128,12 @@
             <span class="maharaja">MAHARAJA'S</span>
             <span class="reserve">RESERVE</span>
         </div>
-        <ul class="nav-links">
+        <div class="hamburger" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#purity">Purity</a></li>
@@ -201,6 +206,19 @@
         <div class="flex items-center gap-3 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
           <span class="material-symbols-outlined text-[20px] text-mango-dark">check_circle</span>
           <span class="font-display font-bold text-sm tracking-tighter">Fair Trade</span>
+        </div>
+      </div>
+      
+      <!-- Certificate Images -->
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white p-2 rounded-2xl shadow-xl hover:-translate-y-2 transition-transform duration-300 border border-ink/10">
+          <img src="organic_certificate_1779006553455.png" alt="Organic Certificate" class="w-full h-auto rounded-xl object-cover aspect-[4/3]">
+        </div>
+        <div class="bg-white p-2 rounded-2xl shadow-xl hover:-translate-y-2 transition-transform duration-300 border border-ink/10">
+          <img src="iso_certificate_1779006569446.png" alt="ISO 22000 Certificate" class="w-full h-auto rounded-xl object-cover aspect-[4/3]">
+        </div>
+        <div class="bg-white p-2 rounded-2xl shadow-xl hover:-translate-y-2 transition-transform duration-300 border border-ink/10">
+          <img src="fair_trade_certificate_1779006586128.png" alt="Fair Trade Certificate" class="w-full h-auto rounded-xl object-cover aspect-[4/3]">
         </div>
       </div>
     </div>
@@ -846,21 +864,21 @@
 </div>
 
 <!-- Floating Social Media Bar -->
-<div class="fixed right-4 sm:right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50" style="z-index: 9999;">
+<div class="fixed bottom-4 left-1/2 -translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:right-6 lg:left-auto lg:translate-x-0 lg:bottom-auto flex flex-row lg:flex-col gap-4 z-50" style="z-index: 9999;">
     <a href="#" class="w-12 h-12 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:scale-110 transition-transform duration-300 group relative">
-        <span class="absolute right-14 bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">WhatsApp</span>
+        <span class="absolute -top-10 lg:top-auto lg:right-14 bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">WhatsApp</span>
         <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
     <a href="#" class="w-12 h-12 bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] text-white rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:scale-110 transition-transform duration-300 group relative">
-        <span class="absolute right-14 bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Instagram</span>
+        <span class="absolute -top-10 lg:top-auto lg:right-14 bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Instagram</span>
         <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
     </a>
     <a href="#" class="w-12 h-12 bg-[#1877F2] text-white rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:scale-110 transition-transform duration-300 group relative">
-        <span class="absolute right-14 bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Facebook</span>
+        <span class="absolute -top-10 lg:top-auto lg:right-14 bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Facebook</span>
         <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
     </a>
     <a href="#" class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:scale-110 transition-transform duration-300 border border-white/20 group relative">
-        <span class="absolute right-14 bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Threads</span>
+        <span class="absolute -top-10 lg:top-auto lg:right-14 bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Threads</span>
         <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M12.04 0C5.558 0 0 5.567 0 12.052S5.558 24.1 12.04 24.1c6.48 0 12.036-5.563 12.036-12.048S18.522 0 12.04 0Zm5.44 14.86c-1.458 1.464-3.568 2.056-5.485 1.954-2.88-.152-4.928-1.554-5.918-4.048-.485-1.222-.55-2.61-.173-3.868.514-1.71 1.776-3.08 3.435-3.714 2.21-.845 4.79-.384 6.48 1.156.402.366.746.804 1.01 1.29.136.25.045.568-.2.712l-.956.592c-.244.152-.562.08-.725-.16a4.42 4.42 0 0 0-3.046-1.986c-2.316-.36-4.57 1.016-5.185 3.16-.32 1.106-.176 2.302.408 3.284.81 1.357 2.372 2.1 4.024 1.906 1.472-.172 2.698-.946 3.43-2.188.168-.284.444-.45.76-.432l1.108.06c.328.016.58.29.566.62-.036.782-.36 1.506-.974 2.072ZM11.968 14.16c-1.63-.122-2.73-1.474-2.684-3.155.046-1.69 1.15-3.036 2.766-3.09 1.516-.052 2.72.99 3.03 2.456l.044.208-4.323 1.054c.24.81 1.026 1.4 1.892 1.41.674.006 1.272-.344 1.636-.932.146-.236.438-.344.7-.246l1.018.374c.266.1.37.382.25.642-.486 1.042-1.602 1.76-2.88 1.76l-.01.002c-.482-.008-.962-.17-1.44-.484Zm1.162-4.596c-.636-.08-1.28.274-1.54 1.03l2.846-.693c-.156-.472-.734-.84-1.306-.337Z"/></svg>
     </a>
 </div>

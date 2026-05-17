@@ -170,7 +170,7 @@ body, html {
     opacity: 1;
 }
 
-h1 {
+.glass-card h1 {
     font-size: 3.2rem;
     font-weight: 900;
     margin-bottom: 15px;
@@ -180,7 +180,7 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
-h2 {
+.glass-card h2 {
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 10px;
@@ -188,7 +188,7 @@ h2 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-p {
+.glass-card p {
     font-size: 1.15rem;
     font-weight: 400;
     line-height: 1.6;
@@ -255,6 +255,85 @@ p {
     align-items: center;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-light);
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease;
+        z-index: 100;
+        border-left: 1px solid var(--glass-border);
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        margin: 20px 0;
+    }
+    
+    .nav-links a {
+        font-size: 20px;
+    }
+
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2rem; }
+    
+    .glass-card {
+        padding: 30px 25px;
+        max-width: 350px;
+    }
+    
+    .content-section {
+        padding: 0 5%;
+    }
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .navbar {
@@ -262,17 +341,22 @@ p {
     }
     
     .nav-links {
-        display: none; /* Can implement hamburger later if needed */
+        width: 100%;
+        border-left: none;
     }
     
-    h1 { font-size: 3rem; }
-    h2 { font-size: 2.2rem; }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    p { font-size: 1rem; }
     
     .glass-card {
-        padding: 30px 20px;
+        padding: 25px 20px;
+        max-width: 100%;
+        width: 90%;
     }
     
-    .content-section {
-        padding: 0 5%;
+    .content-section.align-left,
+    .content-section.align-right {
+        align-items: center;
     }
 }
