@@ -176,7 +176,10 @@
             <div class="glass-card end-card">
                 <h2>Taste the Tropics</h2>
                 <p>A burst of sunshine awaits. Are you ready to dive in?</p>
-                <button class="cta-button">Order Now</button>
+                <div class="flex gap-4 mt-6">
+                    <button class="cta-button checkout-trigger" style="margin-top: 0;">Buy Now</button>
+                    <button class="cta-button secondary-btn checkout-trigger" style="margin-top: 0;">Add to Cart</button>
+                </div>
             </div>
         </div>
     </div>
@@ -882,7 +885,60 @@
         <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M12.04 0C5.558 0 0 5.567 0 12.052S5.558 24.1 12.04 24.1c6.48 0 12.036-5.563 12.036-12.048S18.522 0 12.04 0Zm5.44 14.86c-1.458 1.464-3.568 2.056-5.485 1.954-2.88-.152-4.928-1.554-5.918-4.048-.485-1.222-.55-2.61-.173-3.868.514-1.71 1.776-3.08 3.435-3.714 2.21-.845 4.79-.384 6.48 1.156.402.366.746.804 1.01 1.29.136.25.045.568-.2.712l-.956.592c-.244.152-.562.08-.725-.16a4.42 4.42 0 0 0-3.046-1.986c-2.316-.36-4.57 1.016-5.185 3.16-.32 1.106-.176 2.302.408 3.284.81 1.357 2.372 2.1 4.024 1.906 1.472-.172 2.698-.946 3.43-2.188.168-.284.444-.45.76-.432l1.108.06c.328.016.58.29.566.62-.036.782-.36 1.506-.974 2.072ZM11.968 14.16c-1.63-.122-2.73-1.474-2.684-3.155.046-1.69 1.15-3.036 2.766-3.09 1.516-.052 2.72.99 3.03 2.456l.044.208-4.323 1.054c.24.81 1.026 1.4 1.892 1.41.674.006 1.272-.344 1.636-.932.146-.236.438-.344.7-.246l1.018.374c.266.1.37.382.25.642-.486 1.042-1.602 1.76-2.88 1.76l-.01.002c-.482-.008-.962-.17-1.44-.484Zm1.162-4.596c-.636-.08-1.28.274-1.54 1.03l2.846-.693c-.156-.472-.734-.84-1.306-.337Z"/></svg>
     </a>
 </div>
+<!-- Checkout Modal Overlay -->
+<div id="checkout-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[10000] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-white text-ink w-[90%] max-w-md rounded-3xl shadow-2xl overflow-hidden relative transform scale-95 transition-transform duration-300" id="checkout-modal-content">
+        <!-- Close Button -->
+        <button id="close-modal" class="absolute top-4 right-4 text-ink/50 hover:text-ink transition-colors z-10">
+            <span class="material-symbols-outlined">close</span>
+        </button>
 
-    <script src="script.js"></script>
+        <!-- Step 1: Email -->
+        <div id="step-email" class="checkout-step p-8 active">
+            <h3 class="text-2xl font-bold font-display mb-2">Checkout</h3>
+            <p class="text-sm text-ink/60 mb-6">Enter your email to continue.</p>
+            <input type="email" id="email-input" placeholder="your@email.com" class="w-full px-4 py-3 rounded-xl border border-ink/20 focus:border-mango focus:ring-2 focus:ring-mango/20 outline-none transition-all mb-6">
+            <button id="btn-next-address" class="w-full py-3 bg-mango hover:bg-mango-dark text-white font-bold rounded-xl transition-colors">Continue to Address</button>
+        </div>
+
+        <!-- Step 2: Address -->
+        <div id="step-address" class="checkout-step p-8 hidden">
+            <button class="text-sm text-mango font-bold mb-4 flex items-center gap-1 hover:text-mango-dark transition-colors btn-back" data-target="step-email"><span class="material-symbols-outlined text-sm">arrow_back</span> Back</button>
+            <h3 class="text-2xl font-bold font-display mb-2">Delivery Address</h3>
+            <p class="text-sm text-ink/60 mb-6">Where should we send your order?</p>
+            <textarea id="address-input" rows="3" placeholder="Full Delivery Address" class="w-full px-4 py-3 rounded-xl border border-ink/20 focus:border-mango focus:ring-2 focus:ring-mango/20 outline-none transition-all mb-6 resize-none"></textarea>
+            <button id="btn-next-payment" class="w-full py-3 bg-mango hover:bg-mango-dark text-white font-bold rounded-xl transition-colors">Proceed to Payment</button>
+        </div>
+
+        <!-- Step 3: Payment (UPI) -->
+        <div id="step-payment" class="checkout-step p-8 hidden">
+            <button class="text-sm text-mango font-bold mb-4 flex items-center gap-1 hover:text-mango-dark transition-colors btn-back" data-target="step-address"><span class="material-symbols-outlined text-sm">arrow_back</span> Back</button>
+            <h3 class="text-2xl font-bold font-display mb-2">Secure UPI Payment</h3>
+            <p class="text-sm text-ink/60 mb-6">Enter your UPI ID to simulate payment.</p>
+            <div class="flex items-center bg-cream px-4 py-3 rounded-xl border border-ink/10 mb-6">
+                <span class="material-symbols-outlined text-ink/40 mr-2">account_balance_wallet</span>
+                <input type="text" id="upi-input" placeholder="example@upi" class="w-full bg-transparent outline-none">
+            </div>
+            <button id="btn-pay" class="w-full py-3 bg-[#25D366] hover:bg-[#1DA851] text-white font-bold rounded-xl transition-all relative overflow-hidden">
+                <span id="pay-text">Pay Now</span>
+                <span id="pay-spinner" class="absolute inset-0 flex items-center justify-center hidden bg-[#25D366]">
+                    <span class="material-symbols-outlined animate-spin">progress_activity</span>
+                </span>
+            </button>
+        </div>
+
+        <!-- Step 4: Success -->
+        <div id="step-success" class="checkout-step p-10 hidden text-center">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500">
+                <span class="material-symbols-outlined text-4xl">check_circle</span>
+            </div>
+            <h3 class="text-2xl font-bold font-display mb-2 text-green-600">ORDER CONFIRMED</h3>
+            <p class="text-sm text-ink/60 mb-8">Thank you for choosing Maharaja's Reserve. Your premium mango experience is on the way.</p>
+            <button id="btn-done" class="w-full py-3 bg-ink hover:bg-ink/80 text-white font-bold rounded-xl transition-colors">Return to Home</button>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js?v=2"></script>
 </body>
 </html>

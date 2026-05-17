@@ -248,6 +248,18 @@ body, html {
     box-shadow: 0 10px 20px rgba(255, 157, 0, 0.4);
 }
 
+.cta-button.secondary-btn {
+    background: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--primary-color);
+}
+
+.cta-button.secondary-btn:hover {
+    background: rgba(255, 157, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(255, 157, 0, 0.2);
+    color: var(--primary-color);
+}
+
 .end-card {
     text-align: center;
     display: flex;

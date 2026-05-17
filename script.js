@@ -94,34 +94,119 @@ document.querySelectorAll('.glass-card').forEach(card => {
     observer.observe(card);
 });
 
-// Modal Logic
-const modal = document.getElementById('order-modal');
-const closeModalBtns = [document.getElementById('close-modal'), document.getElementById('continue-shopping')];
-const orderBtns = document.querySelectorAll('.cta-button');
+// Checkout Modal Logic
+const checkoutModal = document.getElementById('checkout-modal');
+const checkoutModalContent = document.getElementById('checkout-modal-content');
+const closeCheckoutBtn = document.getElementById('close-modal');
+const checkoutTriggers = document.querySelectorAll('.checkout-trigger');
 
-if (modal) {
-    orderBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            modal.style.display = 'flex';
-            // Slight delay to allow display: flex to apply before transitioning opacity
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                modal.classList.add('opacity-100');
-            }, 10);
-        });
-    });
+const steps = {
+    email: document.getElementById('step-email'),
+    address: document.getElementById('step-address'),
+    payment: document.getElementById('step-payment'),
+    success: document.getElementById('step-success')
+};
 
-    closeModalBtns.forEach(btn => {
-        if (btn) {
-            btn.addEventListener('click', () => {
-                modal.classList.remove('opacity-100');
-                modal.classList.add('opacity-0');
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                }, 300); // match duration-300
-            });
+// Inputs
+const emailInput = document.getElementById('email-input');
+const addressInput = document.getElementById('address-input');
+const upiInput = document.getElementById('upi-input');
+
+// Buttons
+const btnNextAddress = document.getElementById('btn-next-address');
+const btnNextPayment = document.getElementById('btn-next-payment');
+const btnPay = document.getElementById('btn-pay');
+const btnDone = document.getElementById('btn-done');
+const btnBacks = document.querySelectorAll('.btn-back');
+
+// Helper to switch steps
+function showStep(stepId) {
+    Object.values(steps).forEach(step => {
+        if (step) {
+            step.classList.add('hidden');
+            step.classList.remove('active');
         }
     });
+    if (steps[stepId]) {
+        steps[stepId].classList.remove('hidden');
+        setTimeout(() => steps[stepId].classList.add('active'), 10);
+    }
+}
+
+// Open modal
+checkoutTriggers.forEach(btn => {
+    btn.addEventListener('click', () => {
+        if(checkoutModal) {
+            checkoutModal.classList.remove('opacity-0', 'pointer-events-none');
+            checkoutModalContent.classList.remove('scale-95');
+            checkoutModalContent.classList.add('scale-100');
+            showStep('email');
+            if(emailInput) emailInput.value = '';
+            if(addressInput) addressInput.value = '';
+            if(upiInput) upiInput.value = '';
+        }
+    });
+});
+
+// Close modal
+function closeCheckout() {
+    if(checkoutModal) {
+        checkoutModal.classList.add('opacity-0', 'pointer-events-none');
+        checkoutModalContent.classList.remove('scale-100');
+        checkoutModalContent.classList.add('scale-95');
+    }
+}
+if(closeCheckoutBtn) closeCheckoutBtn.addEventListener('click', closeCheckout);
+
+// Back buttons
+btnBacks.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const target = e.currentTarget.getAttribute('data-target');
+        showStep(target.replace('step-', ''));
+    });
+});
+
+// Flow
+if(btnNextAddress) {
+    btnNextAddress.addEventListener('click', () => {
+        if (emailInput.value.includes('@')) {
+            showStep('address');
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    });
+}
+
+if(btnNextPayment) {
+    btnNextPayment.addEventListener('click', () => {
+        if (addressInput.value.trim().length > 5) {
+            showStep('payment');
+        } else {
+            alert('Please enter a valid delivery address.');
+        }
+    });
+}
+
+if(btnPay) {
+    btnPay.addEventListener('click', () => {
+        if (upiInput.value.includes('@')) {
+            // Simulate processing
+            document.getElementById('pay-text').classList.add('hidden');
+            document.getElementById('pay-spinner').classList.remove('hidden');
+            
+            setTimeout(() => {
+                document.getElementById('pay-text').classList.remove('hidden');
+                document.getElementById('pay-spinner').classList.add('hidden');
+                showStep('success');
+            }, 2000);
+        } else {
+            alert('Please enter a valid UPI ID (e.g., name@upi).');
+        }
+    });
+}
+
+if(btnDone) {
+    btnDone.addEventListener('click', closeCheckout);
 }
 
 // Hamburger Menu Logic
